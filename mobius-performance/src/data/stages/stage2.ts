@@ -1,0 +1,73 @@
+import { Stage } from '@/types/stage';
+
+export const stage2: Stage = {
+  id: 2,
+  name: 'Stage 2',
+  title: 'Hardware + Software',
+  description: 'Combinação de reprogramação ECU com upgrades de hardware básicos para maior ganho de performance.',
+  shortDescription: 'ECU + hardware básico para performance superior',
+  icon: '/icons/stage2.svg',
+  color: '#10B981',
+  modifications: [
+    {
+      id: 'ecu-remap-stage2',
+      name: 'Reprogramação ECU Stage 2',
+      description: 'Mapeamento otimizado para trabalhar com hardware modificado',
+      category: 'software',
+      required: true,
+    },
+    {
+      id: 'cold-air-intake',
+      name: 'Admissão Esportiva',
+      description: 'Sistema de admissão de ar frio de alta performance',
+      category: 'intake',
+      required: true,
+      price: 800,
+    },
+    {
+      id: 'catback-exhaust',
+      name: 'Escapamento Cat-Back',
+      description: 'Sistema de escape esportivo do catalisador para trás',
+      category: 'exhaust',
+      required: true,
+      price: 1200,
+    },
+    {
+      id: 'intercooler-upgrade',
+      name: 'Intercooler Esportivo',
+      description: 'Intercooler de maior capacidade para motores turbo',
+      category: 'turbo',
+      required: false,
+      price: 1500,
+    },
+  ],
+  requirements: [
+    'Stage 1 instalado',
+    'Sistema de arrefecimento eficiente',
+    'Combustível premium obrigatório',
+  ],
+  benefits: [
+    'Ganho de 25-35% de potência',
+    'Som esportivo característico',
+    'Melhor respiração do motor',
+    'Temperaturas mais baixas',
+    'Visual esportivo',
+  ],
+  price: {
+    min: 2500,
+    max: 4500,
+    currency: 'BRL',
+    includes: [
+      'Todas as peças listadas',
+      'Instalação completa',
+      'Reprogramação ECU',
+      'Teste em dinamômetro',
+      'Certificado de performance',
+    ],
+  },
+  duration: '1-2 dias',
+  warranty: '2 anos ou 30.000 km',
+  popularity: 80,
+  difficulty: 'medium',
+  reversible: true,
+};
