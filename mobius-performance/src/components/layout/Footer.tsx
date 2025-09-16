@@ -86,15 +86,15 @@ export const Footer: React.FC = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-primary-400" />
-                <span className="text-gray-300">{siteConfig.contact.phone}</span>
+                <span className="text-gray-300">{siteConfig?.contact?.phone || '(11) 99999-9999'}</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-primary-400" />
-                <span className="text-gray-300">{siteConfig.contact.email}</span>
+                <span className="text-gray-300">{siteConfig?.contact?.email || 'contato@mobiusperformance.com'}</span>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-primary-400 mt-0.5" />
-                <span className="text-gray-300">{siteConfig.contact.address}</span>
+                <span className="text-gray-300">{siteConfig?.contact?.address || 'São Paulo, SP'}</span>
               </div>
             </div>
 
@@ -107,15 +107,15 @@ export const Footer: React.FC = () => {
               <div className="space-y-1 text-sm text-gray-400">
                 <div className="flex justify-between">
                   <span>Segunda - Sexta:</span>
-                  <span>{siteConfig.business.hours.weekdays}</span>
+                  <span>08:00 - 18:00</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Sábado:</span>
-                  <span>{siteConfig.business.hours.saturday}</span>
+                  <span>08:00 - 12:00</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Domingo:</span>
-                  <span>{siteConfig.business.hours.sunday}</span>
+                  <span>Fechado</span>
                 </div>
               </div>
             </div>
@@ -192,7 +192,7 @@ export const Footer: React.FC = () => {
             {/* Social Links */}
             <div className="flex items-center space-x-4">
               <Link
-                href={siteConfig.links.instagram}
+                href="https://instagram.com/mobiusperformance"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary-400 transition-colors duration-200"
@@ -200,7 +200,7 @@ export const Footer: React.FC = () => {
                 <Instagram className="w-5 h-5" />
               </Link>
               <Link
-                href={siteConfig.links.facebook}
+                href="https://facebook.com/mobiusperformance"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary-400 transition-colors duration-200"
@@ -208,7 +208,7 @@ export const Footer: React.FC = () => {
                 <Facebook className="w-5 h-5" />
               </Link>
               <Link
-                href={siteConfig.links.youtube}
+                href="https://youtube.com/mobiusperformance"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary-400 transition-colors duration-200"
@@ -219,7 +219,7 @@ export const Footer: React.FC = () => {
 
             {/* WhatsApp CTA */}
             <Link
-              href={siteConfig.links.whatsapp}
+              href="https://wa.me/5511999999999"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 flex items-center space-x-2"

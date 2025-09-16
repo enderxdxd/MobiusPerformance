@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
-import { DefaultSeo } from 'next-seo';
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { defaultSEO } from "../../config/seo.config";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -68,10 +66,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className="scroll-smooth">
+      <head>
+        {/* Meta tags básicas já são gerenciadas pelo Next.js 13+ */}
+      </head>
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >
-        <DefaultSeo {...defaultSEO} />
         <div className="min-h-screen flex flex-col">
           <Navbar />
           <main className="flex-1 pt-16 lg:pt-20">

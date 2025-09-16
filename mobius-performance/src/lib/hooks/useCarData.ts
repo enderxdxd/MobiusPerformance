@@ -34,7 +34,7 @@ export const useCarData = () => {
       // Simulate API delay
       await new Promise(resolve => setTimeout(resolve, 100));
       const car = getCarById(id);
-      return car;
+      return car || null;
     } catch (err) {
       setError('Erro ao buscar veículo');
       return null;
@@ -99,8 +99,10 @@ export const useCarFilter = (initialCars: Car[] = cars) => {
     fuelType: '',
     minPower: 0,
     maxPower: 1000,
-    minYear: 2000,
-    maxYear: new Date().getFullYear()
+    year: {
+      min: 2000,
+      max: new Date().getFullYear()
+    }
   });
 
   useEffect(() => {
@@ -130,11 +132,11 @@ export const useCarFilter = (initialCars: Car[] = cars) => {
     }
 
     // Apply year range filter
-    if (filters.minYear !== undefined) {
-      result = result.filter(car => car.year >= filters.minYear!);
+    if (filters.year?.min !== undefined) {
+      result = result.filter(car => car.year >= filters.year!.min);
     }
-    if (filters.maxYear !== undefined) {
-      result = result.filter(car => car.year <= filters.maxYear!);
+    if (filters.year?.max !== undefined) {
+      result = result.filter(car => car.year <= filters.year!.max);
     }
 
     setFilteredCars(result);
@@ -151,8 +153,10 @@ export const useCarFilter = (initialCars: Car[] = cars) => {
       fuelType: '',
       minPower: 0,
       maxPower: 1000,
-      minYear: 2000,
-      maxYear: new Date().getFullYear()
+      year: {
+        min: 2000,
+        max: new Date().getFullYear()
+      }
     });
   };
 
@@ -162,8 +166,8 @@ export const useCarFilter = (initialCars: Car[] = cars) => {
            filters.fuelType !== '' ||
            filters.minPower !== 0 ||
            filters.maxPower !== 1000 ||
-           filters.minYear !== 2000 ||
-           filters.maxYear !== new Date().getFullYear();
+           filters.year?.min !== 2000 ||
+           filters.year?.max !== new Date().getFullYear();
   }, [filters]);
 
   return {
