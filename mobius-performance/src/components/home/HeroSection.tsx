@@ -3,8 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, Play } from 'lucide-react';
-import Image from 'next/image';
+import { ArrowRight } from 'lucide-react';
 
 export const HeroSection: React.FC = () => {
   const containerVariants = {
@@ -42,62 +41,67 @@ export const HeroSection: React.FC = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
-      {/* Background */}
+      {/* Background Pattern */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent z-10" />
-        <div className="w-full h-full bg-gradient-to-br from-black via-gray-900 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(239,68,68,0.1)_0%,transparent_50%)]" />
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
       </div>
 
       {/* Content */}
-      <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="space-y-12"
-        >
-          {/* Main Title */}
-          <motion.div variants={titleVariants} className="mb-16">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight mb-8">
-              Transforme Seu
-              <br />
-              <span className="relative text-red-500">
-                Carro
-                <motion.div
-                  className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-red-500 to-red-700"
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ delay: 1.5, duration: 0.8 }}
-                />
-              </span>
-              <br />
-              <span className="text-white">em uma</span>
-              <br />
-              <span className="bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">
-                Máquina de Performance
-              </span>
-            </h1>
-          </motion.div>
-
-          {/* Subtitle */}
-          <motion.p 
-            variants={itemVariants} 
-            className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-16"
+      <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 items-center min-h-screen text-center">
+          {/* Text Content */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="space-y-8"
           >
-            Especialistas em reprogramação ECU, preparação de motores e tuning completo 
-            com tecnologia de ponta e resultados comprovados.
-          </motion.p>
+            {/* Main Title */}
+            <motion.div variants={titleVariants}>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
+                Seu
+                <br />
+                <span className="relative text-red-500">
+                  Carro
+                  <motion.div
+                    className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-red-500 to-red-700"
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ delay: 1.5, duration: 0.8 }}
+                  />
+                </span>
+                <br />
+                <span className="text-white">em uma</span>
+                <br />
+                <span className="bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">
+                  Máquina de Performance
+                </span>
+              </h1>
+            </motion.div>
 
-          {/* CTA Button */}
-          <motion.div variants={itemVariants} className="mb-20">
-            <Link href="/tuning-stages" className="inline-block">
-              <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-red-500/25 group">
-                <span className="mr-2">Descobrir Stages</span>
-                <ArrowRight className="w-5 h-5 inline-block transition-transform group-hover:translate-x-1" />
-              </button>
-            </Link>
+            {/* Subtitle */}
+            <motion.p 
+              variants={itemVariants} 
+              className="text-lg md:text-xl text-gray-300 leading-relaxed mb-8 max-w-3xl mx-auto"
+            >
+              Especialistas em reprogramação ECU, preparação de motores e tuning completo 
+              com tecnologia de ponta e resultados comprovados.
+            </motion.p>
+
+            {/* CTA Button */}
+            <motion.div variants={itemVariants}>
+              <Link href="/services" className="inline-block">
+                <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-red-500/25 group">
+                  <span className="mr-2">Descobrir Stages</span>
+                  <ArrowRight className="w-5 h-5 inline-block transition-transform group-hover:translate-x-1" />
+                </button>
+              </Link>
+            </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Scroll Indicator */}
