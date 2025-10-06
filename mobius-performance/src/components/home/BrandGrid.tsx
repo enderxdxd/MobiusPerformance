@@ -5,18 +5,15 @@ import { motion } from 'framer-motion';
 import { Car } from 'lucide-react';
 
 const brands = [
-  { id: 'bmw', name: 'BMW', logo: '🚗' },
-  { id: 'mercedes', name: 'Mercedes-Benz', logo: '⭐' },
-  { id: 'audi', name: 'Audi', logo: '🔷' },
-  { id: 'porsche', name: 'Porsche', logo: '🏎️' },
-  { id: 'ferrari', name: 'Ferrari', logo: '🐎' },
-  { id: 'lamborghini', name: 'Lamborghini', logo: '🐂' },
-  { id: 'mclaren', name: 'McLaren', logo: '🟠' },
-  { id: 'bentley', name: 'Bentley', logo: '🦅' },
-  { id: 'rollsroyce', name: 'Rolls-Royce', logo: '👑' },
-  { id: 'astonmartin', name: 'Aston Martin', logo: '🦅' },
-  { id: 'landrover', name: 'Land Rover', logo: '🏔️' },
-  { id: 'range', name: 'Range Rover', logo: '⛰️' },
+  { id: 'bmw', name: 'BMW', logo: '/logos/bmw.webp' },
+  { id: 'mercedes', name: 'Mercedes-Benz', logo: '/logos/meca.webp' },
+  { id: 'audi', name: 'Audi', logo: '/logos/audi.webp' },
+  { id: 'porsche', name: 'Porsche', logo: '/logos/porsche.webp' },
+  { id: 'lamborghini', name: 'Lamborghini', logo: '/logos/lambo.webp' },
+  { id: 'chevrolet', name: 'Chevrolet', logo: '/logos/chevy.jpg' },
+  { id: 'volkswagen', name: 'Volkswagen', logo: '/logos/volks.png' },
+  // Marcas sem logo ainda - usando emojis temporariamente
+  
 ];
 
 export const BrandGrid: React.FC = () => {
@@ -44,7 +41,7 @@ export const BrandGrid: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-black">
+    <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <div className="text-center mb-16">
@@ -53,19 +50,10 @@ export const BrandGrid: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold text-white mb-4 font-display"
+            className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-display"
           >
-            Selecione Sua <span className="gradient-text">Marca</span>
+            Select Your Vehicle
           </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl text-gray-300 max-w-3xl mx-auto"
-          >
-            Trabalhamos com as principais marcas premium do mercado automotivo
-          </motion.p>
         </div>
 
         {/* Brand Grid */}
@@ -74,26 +62,32 @@ export const BrandGrid: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 max-w-6xl mx-auto"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-6xl mx-auto"
         >
           {brands.map((brand) => (
             <motion.div
               key={brand.id}
               variants={itemVariants}
-              className={`relative p-6 bg-gray-900 border-2 rounded-xl cursor-pointer transition-all duration-300 hover:border-red-500 ${
-                selectedBrand === brand.id ? 'bg-red-900/20 border-red-500' : 'border-gray-700'
+              className={`group relative p-8 bg-white border border-gray-200 rounded-lg cursor-pointer transition-all duration-300 hover:shadow-lg hover:border-gray-300 ${
+                selectedBrand === brand.id ? 'shadow-lg border-red-500 bg-red-50' : 'border-gray-200'
               }`}
               onClick={() => setSelectedBrand(selectedBrand === brand.id ? null : brand.id)}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
               <div className="text-center">
-                <div className="text-4xl mb-3">
-                  {brand.logo}
+                <div className="h-16 mb-4 flex items-center justify-center">
+                  {brand.logo.startsWith('/') ? (
+                    <img 
+                      src={brand.logo} 
+                      alt={`${brand.name} logo`}
+                      className="max-h-full max-w-full object-contain transition-all duration-300 group-hover:scale-105 filter grayscale"
+                      style={{ maxHeight: '60px', maxWidth: '100px' }}
+                    />
+                  ) : (
+                    <div className="text-4xl">{brand.logo}</div>
+                  )}
                 </div>
-                <h3 className="font-semibold text-white text-sm uppercase tracking-wider font-display">
-                  {brand.name}
-                </h3>
               </div>
               
               {/* Selection indicator */}
@@ -110,33 +104,6 @@ export const BrandGrid: React.FC = () => {
           ))}
         </motion.div>
 
-        {/* Selected Brand Info */}
-        {selectedBrand && (
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mt-12 text-center"
-          >
-            <div className="bg-gray-900 border border-red-600 rounded-2xl p-8 shadow-lg max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold text-white mb-4 font-display">
-                {brands.find(b => b.id === selectedBrand)?.name}
-              </h3>
-              <p className="text-gray-300 mb-6">
-                Especialistas em tuning para {brands.find(b => b.id === selectedBrand)?.name}. 
-                Oferecemos serviços completos de reprogramação ECU, preparação de motor e upgrades de performance.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="btn-professional">
-                  <span>Ver Modelos</span>
-                  <Car className="w-4 h-4 ml-2" />
-                </button>
-                <button className="px-6 py-3 border border-red-600 rounded-lg text-white font-medium hover:bg-red-600 transition-colors">
-                  Solicitar Orçamento
-                </button>
-              </div>
-            </div>
-          </motion.div>
-        )}
       </div>
     </section>
   );
