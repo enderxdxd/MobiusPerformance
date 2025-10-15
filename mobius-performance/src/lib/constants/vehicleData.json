@@ -1,0 +1,699 @@
+{
+  "stages": [
+    {
+      "id": 1,
+      "name": "Stage 1",
+      "title": "Reprogramação ECU",
+      "description": "Otimização do mapa original da ECU para extrair o máximo potencial do motor com total segurança e confiabilidade.",
+      "features": [
+        "Reprogramação ECU completa",
+        "Otimização de mapas de ignição",
+        "Ajuste de boost (turbo)",
+        "Otimização de injeção",
+        "Diagnóstico completo",
+        "Garantia de 1 ano"
+      ],
+      "modifications": [
+        "Apenas software - sem modificações físicas"
+      ],
+      "price_range": "R$ 1.500 - R$ 3.500",
+      "duration": "2-4 horas",
+      "color": "blue",
+      "gradient": "from-blue-600 to-cyan-600"
+    },
+    {
+      "id": 2,
+      "name": "Stage 2",
+      "title": "ECU + Hardware Básico",
+      "description": "Reprogramação ECU combinada com modificações de hardware básicas para ganhos significativos de performance.",
+      "features": [
+        "Tudo do Stage 1",
+        "Filtro de ar esportivo",
+        "Downpipe com catalisador 200 células",
+        "Intercooler upgrade (opcional)",
+        "Intake esportivo",
+        "Ajuste fino no dyno"
+      ],
+      "modifications": [
+        "Downpipe",
+        "Filtro esportivo",
+        "Intake (opcional)"
+      ],
+      "price_range": "R$ 5.000 - R$ 12.000",
+      "duration": "1-2 dias",
+      "color": "green",
+      "gradient": "from-green-600 to-emerald-600"
+    },
+    {
+      "id": 3,
+      "name": "Stage 3",
+      "title": "Preparação Avançada",
+      "description": "Setup completo de alta performance com upgrades substanciais de hardware e calibração profissional.",
+      "features": [
+        "Tudo do Stage 2",
+        "Turbo upgrade ou kit turbo",
+        "Injetores de alta vazão",
+        "Bomba de combustível upgrade",
+        "Sistema de escapamento completo",
+        "ECU Standalone (opcional)",
+        "Embreagem reforçada"
+      ],
+      "modifications": [
+        "Turbo upgrade",
+        "Injetores",
+        "Bomba combustível",
+        "Escapamento completo"
+      ],
+      "price_range": "R$ 20.000 - R$ 60.000",
+      "duration": "1-2 semanas",
+      "color": "red",
+      "gradient": "from-red-600 to-orange-600"
+    },
+    {
+      "id": 4,
+      "name": "Stage 4",
+      "title": "Full Build Extreme",
+      "description": "Preparação completa para máxima performance. Motor forjado, componentes de competição e potências extremas.",
+      "features": [
+        "Tudo do Stage 3",
+        "Motor forjado completo",
+        "Pistões forjados",
+        "Bielas forjadas",
+        "Árvores de comando esportivas",
+        "Turbo de competição",
+        "Sistema de injeção completo",
+        "Transmissão reforçada"
+      ],
+      "modifications": [
+        "Motor forjado",
+        "Turbo competição",
+        "Transmissão upgrade",
+        "Sistema injeção completo"
+      ],
+      "price_range": "R$ 80.000 - R$ 200.000+",
+      "duration": "1-3 meses",
+      "color": "purple",
+      "gradient": "from-purple-600 to-pink-600"
+    }
+  ],
+  "brands": [
+    {
+      "brand": "Volkswagen",
+      "logo": "/images/brands/vw.svg",
+      "models": [
+        {
+          "model": "Jetta 2.0 TSI (211 cv)",
+          "year": "2019-2024",
+          "engine": "2.0 TSI EA888",
+          "drivetrain": "FWD",
+          "original": {
+            "power_whp": 185,
+            "power_hp": 211,
+            "torque_nm": 280,
+            "torque_lbft": 206,
+            "zero_to_100_s": 7.2
+          },
+          "stage1": {
+            "power_whp": 230,
+            "power_hp": 262,
+            "torque_nm": 360,
+            "torque_lbft": 265,
+            "zero_to_100_s": 6.4
+          },
+          "stage2": {
+            "power_whp": 260,
+            "power_hp": 296,
+            "torque_nm": 420,
+            "torque_lbft": 310,
+            "zero_to_100_s": 6.0
+          },
+          "stage3": {
+            "power_whp": 350,
+            "power_hp": 399,
+            "torque_nm": 540,
+            "torque_lbft": 398,
+            "zero_to_100_s": 4.8
+          },
+          "stage4": {
+            "power_whp": 450,
+            "power_hp": 513,
+            "torque_nm": 650,
+            "torque_lbft": 479,
+            "zero_to_100_s": 4.0
+          }
+        },
+        {
+          "model": "Golf GTI Mk7 (2.0 TSI)",
+          "year": "2015-2021",
+          "engine": "2.0 TSI EA888 Gen3",
+          "drivetrain": "FWD",
+          "original": {
+            "power_whp": 200,
+            "power_hp": 228,
+            "torque_nm": 350,
+            "torque_lbft": 258,
+            "zero_to_100_s": 6.4
+          },
+          "stage1": {
+            "power_whp": 265,
+            "power_hp": 302,
+            "torque_nm": 450,
+            "torque_lbft": 332,
+            "zero_to_100_s": 5.6
+          },
+          "stage2": {
+            "power_whp": 285,
+            "power_hp": 325,
+            "torque_nm": 480,
+            "torque_lbft": 354,
+            "zero_to_100_s": 5.4
+          },
+          "stage3": {
+            "power_whp": 380,
+            "power_hp": 433,
+            "torque_nm": 600,
+            "torque_lbft": 443,
+            "zero_to_100_s": 4.2
+          },
+          "stage4": {
+            "power_whp": 500,
+            "power_hp": 570,
+            "torque_nm": 720,
+            "torque_lbft": 531,
+            "zero_to_100_s": 3.5
+          }
+        },
+        {
+          "model": "Golf R Mk7 (2.0 TSI)",
+          "year": "2015-2021",
+          "engine": "2.0 TSI EA888 Gen3",
+          "drivetrain": "AWD",
+          "original": {
+            "power_whp": 240,
+            "power_hp": 274,
+            "torque_nm": 380,
+            "torque_lbft": 280,
+            "zero_to_100_s": 4.9
+          },
+          "stage1": {
+            "power_whp": 310,
+            "power_hp": 353,
+            "torque_nm": 480,
+            "torque_lbft": 354,
+            "zero_to_100_s": 4.4
+          },
+          "stage2": {
+            "power_whp": 340,
+            "power_hp": 388,
+            "torque_nm": 520,
+            "torque_lbft": 384,
+            "zero_to_100_s": 4.2
+          },
+          "stage3": {
+            "power_whp": 420,
+            "power_hp": 479,
+            "torque_nm": 620,
+            "torque_lbft": 457,
+            "zero_to_100_s": 3.8
+          },
+          "stage4": {
+            "power_whp": 550,
+            "power_hp": 627,
+            "torque_nm": 750,
+            "torque_lbft": 553,
+            "zero_to_100_s": 3.2
+          }
+        },
+        {
+          "model": "Polo GTS 1.4 TSI (150 cv)",
+          "year": "2020-2024",
+          "engine": "1.4 TSI EA211",
+          "drivetrain": "FWD",
+          "original": {
+            "power_whp": 132,
+            "power_hp": 150,
+            "torque_nm": 250,
+            "torque_lbft": 184,
+            "zero_to_100_s": 8.4
+          },
+          "stage1": {
+            "power_whp": 165,
+            "power_hp": 188,
+            "torque_nm": 320,
+            "torque_lbft": 236,
+            "zero_to_100_s": 7.6
+          },
+          "stage2": {
+            "power_whp": 185,
+            "power_hp": 211,
+            "torque_nm": 360,
+            "torque_lbft": 265,
+            "zero_to_100_s": 7.2
+          },
+          "stage3": {
+            "power_whp": 220,
+            "power_hp": 251,
+            "torque_nm": 420,
+            "torque_lbft": 310,
+            "zero_to_100_s": 6.6
+          },
+          "stage4": null
+        }
+      ]
+    },
+    {
+      "brand": "BMW",
+      "logo": "/images/brands/bmw.svg",
+      "models": [
+        {
+          "model": "320i (B48 - 184 hp)",
+          "year": "2016-2023",
+          "engine": "B48 2.0L Turbo",
+          "drivetrain": "RWD",
+          "original": {
+            "power_whp": 156,
+            "power_hp": 184,
+            "torque_nm": 270,
+            "torque_lbft": 199,
+            "zero_to_100_s": 7.1
+          },
+          "stage1": {
+            "power_whp": 210,
+            "power_hp": 248,
+            "torque_nm": 380,
+            "torque_lbft": 280,
+            "zero_to_100_s": 6.2
+          },
+          "stage2": {
+            "power_whp": 230,
+            "power_hp": 271,
+            "torque_nm": 420,
+            "torque_lbft": 310,
+            "zero_to_100_s": 5.9
+          },
+          "stage3": {
+            "power_whp": 280,
+            "power_hp": 330,
+            "torque_nm": 500,
+            "torque_lbft": 369,
+            "zero_to_100_s": 5.5
+          },
+          "stage4": {
+            "power_whp": 350,
+            "power_hp": 413,
+            "torque_nm": 600,
+            "torque_lbft": 443,
+            "zero_to_100_s": 4.8
+          }
+        },
+        {
+          "model": "330i (B48 - 252 hp)",
+          "year": "2016-2023",
+          "engine": "B48 2.0L Turbo",
+          "drivetrain": "RWD",
+          "original": {
+            "power_whp": 214,
+            "power_hp": 252,
+            "torque_nm": 350,
+            "torque_lbft": 258,
+            "zero_to_100_s": 5.8
+          },
+          "stage1": {
+            "power_whp": 260,
+            "power_hp": 306,
+            "torque_nm": 450,
+            "torque_lbft": 332,
+            "zero_to_100_s": 5.2
+          },
+          "stage2": {
+            "power_whp": 295,
+            "power_hp": 348,
+            "torque_nm": 500,
+            "torque_lbft": 369,
+            "zero_to_100_s": 4.9
+          },
+          "stage3": {
+            "power_whp": 340,
+            "power_hp": 401,
+            "torque_nm": 580,
+            "torque_lbft": 428,
+            "zero_to_100_s": 4.5
+          },
+          "stage4": {
+            "power_whp": 420,
+            "power_hp": 495,
+            "torque_nm": 680,
+            "torque_lbft": 502,
+            "zero_to_100_s": 4.0
+          }
+        },
+        {
+          "model": "M3 F80 (S55)",
+          "year": "2014-2018",
+          "engine": "S55 3.0L Twin-Turbo I6",
+          "drivetrain": "RWD",
+          "original": {
+            "power_whp": 390,
+            "power_hp": 431,
+            "torque_nm": 550,
+            "torque_lbft": 406,
+            "zero_to_100_s": 4.1
+          },
+          "stage1": {
+            "power_whp": 450,
+            "power_hp": 513,
+            "torque_nm": 680,
+            "torque_lbft": 502,
+            "zero_to_100_s": 3.8
+          },
+          "stage2": {
+            "power_whp": 470,
+            "power_hp": 536,
+            "torque_nm": 720,
+            "torque_lbft": 531,
+            "zero_to_100_s": 3.5
+          },
+          "stage3": {
+            "power_whp": 585,
+            "power_hp": 667,
+            "torque_nm": 850,
+            "torque_lbft": 627,
+            "zero_to_100_s": 3.2
+          },
+          "stage4": {
+            "power_whp": 700,
+            "power_hp": 798,
+            "torque_nm": 950,
+            "torque_lbft": 701,
+            "zero_to_100_s": 2.8
+          }
+        }
+      ]
+    },
+    {
+      "brand": "Audi",
+      "logo": "/images/brands/audi.svg",
+      "models": [
+        {
+          "model": "A3 2.0 TFSI (EA888)",
+          "year": "2015-2023",
+          "engine": "2.0 TFSI EA888",
+          "drivetrain": "FWD",
+          "original": {
+            "power_whp": 193,
+            "power_hp": 220,
+            "torque_nm": 320,
+            "torque_lbft": 236,
+            "zero_to_100_s": 6.5
+          },
+          "stage1": {
+            "power_whp": 235,
+            "power_hp": 268,
+            "torque_nm": 400,
+            "torque_lbft": 295,
+            "zero_to_100_s": 5.7
+          },
+          "stage2": {
+            "power_whp": 270,
+            "power_hp": 308,
+            "torque_nm": 450,
+            "torque_lbft": 332,
+            "zero_to_100_s": 5.3
+          },
+          "stage3": {
+            "power_whp": 330,
+            "power_hp": 376,
+            "torque_nm": 520,
+            "torque_lbft": 384,
+            "zero_to_100_s": 4.7
+          },
+          "stage4": {
+            "power_whp": 420,
+            "power_hp": 479,
+            "torque_nm": 620,
+            "torque_lbft": 457,
+            "zero_to_100_s": 4.0
+          }
+        },
+        {
+          "model": "S3 2.0 TFSI (8V)",
+          "year": "2015-2020",
+          "engine": "2.0 TFSI EA888 Gen3",
+          "drivetrain": "AWD",
+          "original": {
+            "power_whp": 254,
+            "power_hp": 290,
+            "torque_nm": 400,
+            "torque_lbft": 295,
+            "zero_to_100_s": 4.7
+          },
+          "stage1": {
+            "power_whp": 310,
+            "power_hp": 353,
+            "torque_nm": 500,
+            "torque_lbft": 369,
+            "zero_to_100_s": 4.2
+          },
+          "stage2": {
+            "power_whp": 340,
+            "power_hp": 388,
+            "torque_nm": 540,
+            "torque_lbft": 398,
+            "zero_to_100_s": 4.0
+          },
+          "stage3": {
+            "power_whp": 420,
+            "power_hp": 479,
+            "torque_nm": 620,
+            "torque_lbft": 457,
+            "zero_to_100_s": 3.6
+          },
+          "stage4": {
+            "power_whp": 530,
+            "power_hp": 604,
+            "torque_nm": 730,
+            "torque_lbft": 538,
+            "zero_to_100_s": 3.1
+          }
+        },
+        {
+          "model": "RS3 2.5 TFSI (8V)",
+          "year": "2015-2020",
+          "engine": "2.5 TFSI 5-Cylinder",
+          "drivetrain": "AWD",
+          "original": {
+            "power_whp": 328,
+            "power_hp": 400,
+            "torque_nm": 480,
+            "torque_lbft": 354,
+            "zero_to_100_s": 4.1
+          },
+          "stage1": {
+            "power_whp": 430,
+            "power_hp": 490,
+            "torque_nm": 600,
+            "torque_lbft": 443,
+            "zero_to_100_s": 3.6
+          },
+          "stage2": {
+            "power_whp": 475,
+            "power_hp": 542,
+            "torque_nm": 650,
+            "torque_lbft": 479,
+            "zero_to_100_s": 3.3
+          },
+          "stage3": {
+            "power_whp": 560,
+            "power_hp": 638,
+            "torque_nm": 720,
+            "torque_lbft": 531,
+            "zero_to_100_s": 2.9
+          },
+          "stage4": {
+            "power_whp": 680,
+            "power_hp": 775,
+            "torque_nm": 850,
+            "torque_lbft": 627,
+            "zero_to_100_s": 2.5
+          }
+        }
+      ]
+    },
+    {
+      "brand": "Mercedes-Benz",
+      "logo": "/images/brands/mercedes.svg",
+      "models": [
+        {
+          "model": "A45 AMG (W176 - M133)",
+          "year": "2013-2018",
+          "engine": "M133 2.0L Turbo",
+          "drivetrain": "AWD",
+          "original": {
+            "power_whp": 314,
+            "power_hp": 360,
+            "torque_nm": 475,
+            "torque_lbft": 350,
+            "zero_to_100_s": 4.2
+          },
+          "stage1": {
+            "power_whp": 350,
+            "power_hp": 400,
+            "torque_nm": 560,
+            "torque_lbft": 413,
+            "zero_to_100_s": 3.8
+          },
+          "stage2": {
+            "power_whp": 395,
+            "power_hp": 451,
+            "torque_nm": 610,
+            "torque_lbft": 450,
+            "zero_to_100_s": 3.5
+          },
+          "stage3": {
+            "power_whp": 495,
+            "power_hp": 565,
+            "torque_nm": 700,
+            "torque_lbft": 516,
+            "zero_to_100_s": 3.3
+          },
+          "stage4": {
+            "power_whp": 600,
+            "power_hp": 684,
+            "torque_nm": 800,
+            "torque_lbft": 590,
+            "zero_to_100_s": 2.9
+          }
+        },
+        {
+          "model": "C63 AMG (M177 4.0 V8 TT)",
+          "year": "2015-2023",
+          "engine": "M177 4.0L Twin-Turbo V8",
+          "drivetrain": "RWD",
+          "original": {
+            "power_whp": 399,
+            "power_hp": 469,
+            "torque_nm": 650,
+            "torque_lbft": 479,
+            "zero_to_100_s": 4.0
+          },
+          "stage1": {
+            "power_whp": 470,
+            "power_hp": 552,
+            "torque_nm": 750,
+            "torque_lbft": 553,
+            "zero_to_100_s": 3.6
+          },
+          "stage2": {
+            "power_whp": 520,
+            "power_hp": 611,
+            "torque_nm": 850,
+            "torque_lbft": 627,
+            "zero_to_100_s": 3.3
+          },
+          "stage3": {
+            "power_whp": 600,
+            "power_hp": 704,
+            "torque_nm": 950,
+            "torque_lbft": 701,
+            "zero_to_100_s": 3.0
+          },
+          "stage4": {
+            "power_whp": 750,
+            "power_hp": 880,
+            "torque_nm": 1100,
+            "torque_lbft": 811,
+            "zero_to_100_s": 2.6
+          }
+        }
+      ]
+    },
+    {
+      "brand": "Porsche",
+      "logo": "/images/brands/porsche.svg",
+      "models": [
+        {
+          "model": "911 Turbo S (991.2)",
+          "year": "2016-2019",
+          "engine": "3.8L Twin-Turbo Flat-6",
+          "drivetrain": "AWD",
+          "original": {
+            "power_whp": 522,
+            "power_hp": 580,
+            "torque_nm": 750,
+            "torque_lbft": 553,
+            "zero_to_100_s": 2.9
+          },
+          "stage1": {
+            "power_whp": 585,
+            "power_hp": 650,
+            "torque_nm": 900,
+            "torque_lbft": 664,
+            "zero_to_100_s": 2.6
+          },
+          "stage2": {
+            "power_whp": 630,
+            "power_hp": 700,
+            "torque_nm": 950,
+            "torque_lbft": 701,
+            "zero_to_100_s": 2.5
+          },
+          "stage3": {
+            "power_whp": 720,
+            "power_hp": 800,
+            "torque_nm": 1050,
+            "torque_lbft": 774,
+            "zero_to_100_s": 2.4
+          },
+          "stage4": {
+            "power_whp": 850,
+            "power_hp": 945,
+            "torque_nm": 1200,
+            "torque_lbft": 885,
+            "zero_to_100_s": 2.2
+          }
+        },
+        {
+          "model": "911 Carrera S (991.2)",
+          "year": "2016-2019",
+          "engine": "3.0L Twin-Turbo Flat-6",
+          "drivetrain": "RWD",
+          "original": {
+            "power_whp": 357,
+            "power_hp": 420,
+            "torque_nm": 500,
+            "torque_lbft": 369,
+            "zero_to_100_s": 3.9
+          },
+          "stage1": {
+            "power_whp": 400,
+            "power_hp": 470,
+            "torque_nm": 580,
+            "torque_lbft": 428,
+            "zero_to_100_s": 3.6
+          },
+          "stage2": {
+            "power_whp": 430,
+            "power_hp": 505,
+            "torque_nm": 630,
+            "torque_lbft": 465,
+            "zero_to_100_s": 3.4
+          },
+          "stage3": {
+            "power_whp": 500,
+            "power_hp": 588,
+            "torque_nm": 720,
+            "torque_lbft": 531,
+            "zero_to_100_s": 3.1
+          },
+          "stage4": {
+            "power_whp": 620,
+            "power_hp": 729,
+            "torque_nm": 850,
+            "torque_lbft": 627,
+            "zero_to_100_s": 2.8
+          }
+        }
+      ]
+    }
+  ]
+}

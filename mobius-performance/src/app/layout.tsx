@@ -72,12 +72,14 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >
-        <div className="min-h-screen flex flex-col">
+        <div className="min-h-screen">
           <Navbar />
-          <main className="flex-1 pt-16 lg:pt-20">
+          <main className="lg:ml-64 transition-all duration-300">
             {children}
           </main>
-          <Footer />
+          <div className="lg:ml-64 transition-all duration-300">
+            <Footer />
+          </div>
         </div>
       </body>
     </html>

@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { HeroLogo } from '@/components/ui/Logo';
 
 export const HeroSection: React.FC = () => {
   const containerVariants = {
@@ -54,6 +55,9 @@ export const HeroSection: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/30" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/40" />
       </motion.div>
+
+      {/* Logo Premium - Canto Superior Direito */}
+      <HeroLogo className="absolute top-8 right-8 z-30 hidden lg:block" />
 
       {/* Content */}
       <div className="relative z-20 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 h-full flex items-center">
