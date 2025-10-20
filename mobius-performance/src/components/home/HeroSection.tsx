@@ -68,16 +68,16 @@ export const HeroSection: React.FC = () => {
             <motion.div variants={itemVariants}>
               <h1 className="font-bold text-white leading-[1.2]">
                 <span className="block text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-2">
-                  Transforme Seu
+                  Feito para se
                 </span>
                 <span className="block text-5xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-red-500 mb-2">
-                  Carro
+                  destacar
                 </span>
                 <span className="block text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-2">
-                  em uma
+                  não para
                 </span>
                 <span className="block text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent">
-                  Máquina de Performance
+                  se encaixar
                 </span>
               </h1>
             </motion.div>
