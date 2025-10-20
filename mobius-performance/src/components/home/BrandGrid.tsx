@@ -55,11 +55,7 @@ export const BrandGrid: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-5xl font-bold text-white mb-4 font-display"
           >
-<<<<<<< Updated upstream
-            Selecione Sua <span className="gradient-text">Marca</span>
-=======
-            Selecione seu veículo
->>>>>>> Stashed changes
+            
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
