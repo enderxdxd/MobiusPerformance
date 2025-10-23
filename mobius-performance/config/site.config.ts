@@ -7,10 +7,10 @@ export const siteConfig = {
     instagram: "https://instagram.com/mobiusperformance",
     facebook: "https://facebook.com/mobiusperformance",
     youtube: "https://youtube.com/@mobiusperformance",
-    whatsapp: "https://wa.me/5511999999999",
+    whatsapp: "https://wa.me/+5562997024871",
   },
   contact: {
-    phone: "+55 11 99999-9999",
+    phone: "+55 62 99702-4871",
     email: "contato@mobiusperformance.com",
     address: "Rua das Oficinas, 123 - São Paulo, SP",
     coordinates: {

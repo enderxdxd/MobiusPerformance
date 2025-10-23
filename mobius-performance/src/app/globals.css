@@ -264,7 +264,6 @@ h3 {
   width: 100%;
 }
 
-/* Brand Grid - Como na imagem 3 do S4T */
 .brand-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -303,7 +302,7 @@ h3 {
   filter: grayscale(0%);
 }
 
-/* Cards - Estilo moderno */
+
 .card-modern {
   background: var(--background-tertiary);
   border: 1px solid rgba(255, 255, 255, 0.1);

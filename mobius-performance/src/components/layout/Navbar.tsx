@@ -40,6 +40,16 @@ export const Navbar: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const pathname = usePathname();
   const dropdownRef = useRef<HTMLDivElement>(null);
+<<<<<<< Updated upstream
+=======
+  const handleLogoClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>) => {
+    // If already on home, prevent full reload and smooth scroll to top
+    if (window.location.pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, []);
+>>>>>>> Stashed changes
 
   // Detect mobile
   useEffect(() => {
@@ -84,8 +94,8 @@ export const Navbar: React.FC = () => {
               flex items-center justify-between w-full px-4 py-3 text-base font-semibold rounded-lg
               transition-all duration-300 group relative overflow-hidden
               ${isActive 
-                ? 'text-red-400' 
-                : 'text-white hover:text-white'
+                ? 'text-red-600' 
+                : 'text-white hover:text-red-600 active:text-red-600 focus:text-red-600'
               }
             `}
             aria-expanded={isDropdownOpen}
@@ -108,12 +118,7 @@ export const Navbar: React.FC = () => {
             >
               <ChevronDown className="w-4 h-4" />
             </motion.div>
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-red-600/40 to-red-800/40 rounded-lg"
-              initial={{ opacity: 0 }}
-              whileHover={{ opacity: 1 }}
-              transition={{ duration: 0.3, ease: 'easeInOut' }}
-            />
+            
           </motion.button>
           
           <AnimatePresence>
@@ -144,28 +149,23 @@ export const Navbar: React.FC = () => {
                         <Link
                           href={subItem.href}
                           className={`
-                            block px-4 py-2.5 text-base rounded-md transition-all duration-300 relative overflow-hidden group
+                            block px-4 py-2.5 text-base rounded-md transition-all duration-300 relative overflow-hidden group min-h-[44px] flex items-center
                             ${isSubActive 
-                              ? 'text-red-400 font-semibold' 
-                              : 'text-white hover:text-red-400 font-medium'
+                              ? 'text-red-600 font-semibold' 
+                              : 'text-white hover:text-red-600 active:text-red-600 focus:text-red-600 font-medium'
                             }
                           `}
                         >
                           <div className="flex items-center justify-between relative z-10">
                             <div className="flex items-center gap-2">
-                              {subItem.icon && <span>{subItem.icon}</span>}
+                              
                               <span>{subItem.name}</span>
                             </div>
                             {subItem.desc && (
                               <span className="text-xs text-gray-400">{subItem.desc}</span>
                             )}
                           </div>
-                          <motion.div
-                            className="absolute inset-0 bg-gradient-to-r from-red-600/30 to-red-800/30 rounded-md"
-                            initial={{ opacity: 0 }}
-                            whileHover={{ opacity: 1 }}
-                            transition={{ duration: 0.3, ease: 'easeInOut' }}
-                          />
+                          
                         </Link>
                       </motion.div>
                     );
@@ -193,20 +193,15 @@ export const Navbar: React.FC = () => {
         <Link
           href={item.href}
           className={`
-            block px-4 py-3 text-base font-semibold rounded-lg transition-all duration-300 relative overflow-hidden group
+            block px-4 py-3 text-base font-semibold rounded-lg transition-all duration-300 relative overflow-hidden group min-h-[44px] flex items-center
             ${isActive 
-              ? 'text-red-400' 
-              : 'text-white hover:text-white'
+              ? 'text-red-600' 
+              : 'text-white hover:text-red-600 active:text-red-600 focus:text-red-600'
             }
           `}
         >
           <span className="relative z-10">{item.name}</span>
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-red-600/40 to-red-800/40 rounded-lg"
-            initial={{ opacity: 0 }}
-            whileHover={{ opacity: 1 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-          />
+          
         </Link>
       </motion.div>
     );
@@ -218,14 +213,14 @@ export const Navbar: React.FC = () => {
       <motion.nav
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        className="fixed top-0 left-0 h-full w-64 z-50"
-        style={{ backgroundColor: 'rgba(30, 30, 30, 0.4)' }}
+        className="fixed top-0 left-0 h-full w-64 z-50 overflow-x-hidden"
+        style={{ backgroundColor: 'rgba(10, 10, 10, 0.85)' }}
       >
         <div className="h-full backdrop-blur-md border-r border-white/10">
           <div className="flex flex-col h-full px-4 py-6">
             {/* Logo */}
             <div className="mb-8 px-4">
-              <Link href="/">
+              <Link href="/" onClick={handleLogoClick}>
                 <motion.div
                   whileHover={{ 
                     scale: 1.1,
@@ -248,7 +243,7 @@ export const Navbar: React.FC = () => {
                   <motion.img 
                     src="/LogoMobiusALLWHITE.png" 
                     alt="Logo" 
-                    className="w-16 h-auto"
+                    className="w-14 h-auto"
                     whileHover={{
                       filter: "brightness(1.15)",
                       transition: { duration: 0.3, ease: 'easeInOut' }
@@ -259,7 +254,7 @@ export const Navbar: React.FC = () => {
             </div>
 
             {/* Navigation */}
-            <div className="flex-1 overflow-y-auto space-y-2 scrollbar-thin scrollbar-thumb-red-600 scrollbar-track-transparent">
+            <div className="flex-1 overflow-y-auto overflow-x-hidden space-y-2 scrollbar-thin scrollbar-thumb-red-600 scrollbar-track-transparent">
               {navigation.map((item, index) => (
                 <motion.div
                   key={item.name}
@@ -286,22 +281,10 @@ export const Navbar: React.FC = () => {
             >
               <Link
                 href="/contact"
-                className="flex items-center justify-center gap-2 w-full bg-black hover:bg-gray-900 text-white border-2 border-white/20 hover:border-white/40 px-4 py-3 rounded-lg font-medium transition-all duration-300 shadow-lg shadow-black/50 relative overflow-hidden group"
+                className="flex items-center justify-center gap-2 w-full bg-black hover:bg-red-600 active:bg-red-600 focus:bg-red-600 text-white border-2 border-white/20 hover:border-red-600 active:border-red-600 focus:border-red-600 px-4 py-3 rounded-lg font-medium transition-all duration-300 shadow-lg shadow-black/50 relative overflow-hidden group min-h-[44px]"
               >
                 <Phone className="w-5 h-5 relative z-10" />
                 <span className="relative z-10 text-base">Orçamento</span>
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-gray-700 to-gray-800"
-                  initial={{ scaleX: 0, originX: 0 }}
-                  whileHover={{ scaleX: 1 }}
-                  transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-                />
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
-                  initial={{ x: '-100%', opacity: 0 }}
-                  whileHover={{ x: '100%', opacity: 1 }}
-                  transition={{ duration: 0.8, ease: 'linear', repeat: Infinity }}
-                />
               </Link>
             </motion.div>
           </div>
@@ -318,14 +301,16 @@ export const Navbar: React.FC = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         className="fixed top-0 left-0 right-0 z-50"
-        style={{ backgroundColor: 'rgba(30, 30, 30, 0.4)' }}
+        style={{ backgroundColor: 'rgba(10, 10, 10, 0.85)' }}
       >
         <div className="flex items-center justify-between px-4 py-4 backdrop-blur-md">
-          <img 
-            src="/logo.png" 
-            alt="Logo" 
-            className="w-10 h-auto"
-          />
+          <Link href="/" onClick={handleLogoClick}>
+            <img 
+              src="/LogoMobiusALLWHITE.png"  
+              alt="Logo" 
+              className="w-9 h-auto"
+            />
+          </Link>
           
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -354,8 +339,13 @@ export const Navbar: React.FC = () => {
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+<<<<<<< Updated upstream
               className="fixed top-0 left-0 bottom-0 w-80 z-50 overflow-y-auto"
               style={{ backgroundColor: 'rgba(30, 30, 30, 0.4)' }}
+=======
+              className="fixed top-0 left-0 bottom-0 w-80 z-50 overflow-y-auto overflow-x-hidden"
+              style={{ backgroundColor: 'rgba(10, 10, 10, 0.85)' }}
+>>>>>>> Stashed changes
             >
               <div className="flex flex-col h-full p-6 backdrop-blur-md">
                 <div className="mb-8">
@@ -374,7 +364,11 @@ export const Navbar: React.FC = () => {
 
                 <Link
                   href="/contact"
+<<<<<<< Updated upstream
                   className="flex items-center justify-center gap-2 w-full bg-black hover:bg-gray-900 text-white border-2 border-white/20 hover:border-white/40 px-4 py-3 rounded-lg font-medium mt-4 transition-all duration-300 shadow-lg shadow-black/50"
+=======
+                  className="flex items-center justify-center gap-2 w-full bg-black hover:bg-red-600 active:bg-red-600 focus:bg-red-600 text-white border-2 border-white/20 hover:border-red-600 active:border-red-600 focus:border-red-600 px-4 py-3 rounded-lg font-medium mt-4 transition-all duration-300 shadow-lg shadow-black/50 min-h-[44px]"
+>>>>>>> Stashed changes
                 >
                   <Phone className="w-5 h-5" />
                   <span className="text-base">Orçamento Grátis</span>
