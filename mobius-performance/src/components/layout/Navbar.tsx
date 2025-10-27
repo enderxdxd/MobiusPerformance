@@ -8,27 +8,8 @@ import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 import { Logo } from '@/components/ui/Logo';
 
 const navigation = [
-  { 
-    name: 'Serviços', 
-    href: '/services',
-    dropdown: [
-      { name: 'Reprogramação ECU', href: '/services/ecu-tuning', icon: '⚡' },
-      { name: 'Preparação de Motor', href: '/services/engine-build', icon: '🔧' },
-      { name: 'Turbo & Supercharger', href: '/services/forced-induction', icon: '🌪️' },
-      { name: 'Suspensão Esportiva', href: '/services/suspension', icon: '🏎️' },
-      { name: 'Escapamento Performance', href: '/services/exhaust', icon: '💨' },
-    ]
-  },
-  { 
-    name: 'Tuning Stages', 
-    href: '/tuning-stages',
-    dropdown: [
-      { name: 'Stage 1', href: '/tuning-stages?stage=1', desc: 'Até +30% potência' },
-      { name: 'Stage 2', href: '/tuning-stages?stage=2', desc: 'Até +50% potência' },
-      { name: 'Stage 3', href: '/tuning-stages?stage=3', desc: 'Até +80% potência' },
-      { name: 'Stage 4', href: '/tuning-stages?stage=4', desc: 'Full Build' },
-    ]
-  },
+  { name: 'Serviços', href: '/services' },
+  { name: 'Tuning Stages', href: '/tuning-stages' },
   { name: 'Portfólio', href: '/portfolio' },
   { name: 'Sobre', href: '/about' },
   { name: 'Contato', href: '/contact' },
@@ -36,10 +17,8 @@ const navigation = [
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
   const pathname = usePathname();
-  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const handleLogoClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>) => {
     // If already on home, prevent full reload and smooth scroll to top
@@ -57,124 +36,13 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setActiveDropdown(null);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
   // Close mobile menu on route change
   useEffect(() => {
     setIsOpen(false);
-    setActiveDropdown(null);
   }, [pathname]);
-
-  const handleDropdownToggle = useCallback((name: string) => {
-    setActiveDropdown(prev => prev === name ? null : name);
-  }, []);
 
   const NavItem = ({ item }: { item: any }) => {
     const isActive = pathname === item.href || pathname.startsWith(item.href + '/');
-    const hasDropdown = item.dropdown && item.dropdown.length > 0;
-    const isDropdownOpen = activeDropdown === item.name;
-
-    if (hasDropdown) {
-      return (
-        <div className="relative" ref={dropdownRef}>
-          <motion.button
-            onClick={() => handleDropdownToggle(item.name)}
-            className={`
-              flex items-center justify-between w-full px-4 py-3 text-base font-semibold rounded-lg
-              transition-all duration-300 group relative overflow-hidden
-              ${isActive 
-                ? 'text-red-600' 
-                : 'text-white hover:text-red-600 active:text-red-600 focus:text-red-600'
-              }
-            `}
-            aria-expanded={isDropdownOpen}
-            aria-haspopup="true"
-            whileHover={{ 
-              scale: 1.03, 
-              x: 8,
-              transition: { type: 'spring', stiffness: 500, damping: 20 }
-            }}
-            whileTap={{ 
-              scale: 0.97,
-              transition: { duration: 0.1 }
-            }}
-          >
-            <span className="relative z-10">{item.name}</span>
-            <motion.div
-              className="relative z-10"
-              animate={{ rotate: isDropdownOpen ? 180 : 0 }}
-              transition={{ duration: 0.3, ease: 'easeInOut' }}
-            >
-              <ChevronDown className="w-4 h-4" />
-            </motion.div>
-            
-          </motion.button>
-          
-          <AnimatePresence>
-            {isDropdownOpen && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.2 }}
-                className="overflow-hidden"
-              >
-                <div className="mt-2 ml-4 space-y-1 border-l-2 border-gray-700 pl-2">
-                  {item.dropdown.map((subItem: any) => {
-                    const isSubActive = pathname === subItem.href;
-                    return (
-                      <motion.div
-                        key={subItem.name}
-                        whileHover={{ 
-                          scale: 1.03, 
-                          x: 8,
-                          transition: { type: 'spring', stiffness: 500, damping: 20 }
-                        }}
-                        whileTap={{ 
-                          scale: 0.97,
-                          transition: { duration: 0.1 }
-                        }}
-                      >
-                        <Link
-                          href={subItem.href}
-                          className={`
-                            block px-4 py-2.5 text-base rounded-md transition-all duration-300 relative overflow-hidden group min-h-[44px] flex items-center
-                            ${isSubActive 
-                              ? 'text-red-600 font-semibold' 
-                              : 'text-white hover:text-red-600 active:text-red-600 focus:text-red-600 font-medium'
-                            }
-                          `}
-                        >
-                          <div className="flex items-center justify-between relative z-10">
-                            <div className="flex items-center gap-2">
-                              
-                              <span>{subItem.name}</span>
-                            </div>
-                            {subItem.desc && (
-                              <span className="text-xs text-gray-400">{subItem.desc}</span>
-                            )}
-                          </div>
-                          
-                        </Link>
-                      </motion.div>
-                    );
-                  })}
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      );
-    }
 
     return (
       <motion.div
@@ -199,7 +67,6 @@ export const Navbar: React.FC = () => {
           `}
         >
           <span className="relative z-10">{item.name}</span>
-          
         </Link>
       </motion.div>
     );
