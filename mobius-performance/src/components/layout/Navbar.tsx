@@ -41,7 +41,10 @@ export const Navbar: React.FC = () => {
   const pathname = usePathname();
   const dropdownRef = useRef<HTMLDivElement>(null);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
   const handleLogoClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>) => {
     // If already on home, prevent full reload and smooth scroll to top
     if (window.location.pathname === '/') {
@@ -49,6 +52,9 @@ export const Navbar: React.FC = () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, []);
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
   // Detect mobile
@@ -340,8 +346,13 @@ export const Navbar: React.FC = () => {
               exit={{ x: '-100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               className="fixed top-0 left-0 bottom-0 w-80 z-50 overflow-y-auto"
               style={{ backgroundColor: 'rgba(30, 30, 30, 0.4)' }}
+=======
+              className="fixed top-0 left-0 bottom-0 w-80 z-50 overflow-y-auto overflow-x-hidden"
+              style={{ backgroundColor: 'rgba(10, 10, 10, 0.85)' }}
+>>>>>>> Stashed changes
 =======
               className="fixed top-0 left-0 bottom-0 w-80 z-50 overflow-y-auto overflow-x-hidden"
               style={{ backgroundColor: 'rgba(10, 10, 10, 0.85)' }}
@@ -365,7 +376,11 @@ export const Navbar: React.FC = () => {
                 <Link
                   href="/contact"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   className="flex items-center justify-center gap-2 w-full bg-black hover:bg-gray-900 text-white border-2 border-white/20 hover:border-white/40 px-4 py-3 rounded-lg font-medium mt-4 transition-all duration-300 shadow-lg shadow-black/50"
+=======
+                  className="flex items-center justify-center gap-2 w-full bg-black hover:bg-red-600 active:bg-red-600 focus:bg-red-600 text-white border-2 border-white/20 hover:border-red-600 active:border-red-600 focus:border-red-600 px-4 py-3 rounded-lg font-medium mt-4 transition-all duration-300 shadow-lg shadow-black/50 min-h-[44px]"
+>>>>>>> Stashed changes
 =======
                   className="flex items-center justify-center gap-2 w-full bg-black hover:bg-red-600 active:bg-red-600 focus:bg-red-600 text-white border-2 border-white/20 hover:border-red-600 active:border-red-600 focus:border-red-600 px-4 py-3 rounded-lg font-medium mt-4 transition-all duration-300 shadow-lg shadow-black/50 min-h-[44px]"
 >>>>>>> Stashed changes

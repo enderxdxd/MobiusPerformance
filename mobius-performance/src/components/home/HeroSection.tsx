@@ -146,10 +146,13 @@ export const HeroSection: React.FC = () => {
       </motion.div>
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       {/* Content */}
       <div className="relative z-20 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 h-full flex items-center">
         <div className="max-w-2xl w-full py-20 sm:py-0">
 =======
+=======
+>>>>>>> Stashed changes
       {/* Logo Premium - Canto Superior Direito */}
       <HeroLogo className="absolute top-8 right-8 z-30 hidden lg:block" />
 
@@ -165,6 +168,9 @@ export const HeroSection: React.FC = () => {
       {/* Content Desktop */}
       <div className="relative z-20 w-full max-w-7xl mx-auto px-6 lg:px-8 h-full flex items-center lg:justify-start">
         <div className="max-w-2xl w-full py-20 lg:py-0">
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
           <motion.div
             variants={containerVariants}
