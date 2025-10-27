@@ -51,7 +51,7 @@ export const Footer: React.FC = () => {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center mb-3">
-              <img src="/LogoParaDireita.png" alt="Mobius Performance" className="h-8 sm:h-10 md:h-12 w-auto" />
+              <img src="/LogoBrancaFooter.png" alt="Mobius Performance" className="h-8 sm:h-10 md:h-12 w-auto" />
             </Link>
             
             {/* Contact Info */}

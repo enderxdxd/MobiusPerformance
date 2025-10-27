@@ -10,7 +10,7 @@ export const siteConfig = {
     whatsapp: "https://wa.me/5511999999999",
   },
   contact: {
-    phone: "+55 11 99999-9999",
+    phone: "+55 62 99702-4871",
     email: "contato@mobiusperformance.com",
     address: "Rua das Oficinas, 123 - São Paulo, SP",
     coordinates: {

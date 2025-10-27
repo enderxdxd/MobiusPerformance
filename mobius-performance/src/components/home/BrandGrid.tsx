@@ -52,7 +52,7 @@ export const BrandGrid: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-display"
           >
-            Select Your Vehicle
+            Selecione a sua marca
           </motion.h2>
         </div>
 
@@ -79,8 +79,8 @@ export const BrandGrid: React.FC = () => {
                 <div className="h-16 mb-4 flex items-center justify-center">
                   {brand.logo.startsWith('/') ? (
                     <img 
-                      src={brand.logo} 
-                      alt={`${brand.name} logo`}
+                      src="/LogoMobiusEscritaBranca.png"
+                      alt={`Logo Mobius Performance`}
                       className="max-h-full max-w-full object-contain transition-all duration-300 group-hover:scale-105 filter grayscale"
                       style={{ maxHeight: '60px', maxWidth: '100px' }}
                     />
