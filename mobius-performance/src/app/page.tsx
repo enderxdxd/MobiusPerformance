@@ -10,7 +10,7 @@ export default function Home() {
       <HeroSection />
       <BrandGrid />
       <ServicesSection />
-      <StatsCounter />
+      
     </div>
   );
 }
