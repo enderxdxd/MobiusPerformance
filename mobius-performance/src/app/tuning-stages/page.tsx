@@ -7,6 +7,30 @@ import {
   ChevronDown, X, Check, Info, Sparkles
 } from 'lucide-react';
 
+// Interfaces
+interface PerformanceData {
+  power_hp: number;
+  torque_nm: number;
+  zero_to_100_s: number;
+}
+
+interface VehicleModel {
+  model: string;
+  year: string;
+  engine: string;
+  drivetrain: string;
+  original: PerformanceData;
+  stage1: PerformanceData;
+  stage2: PerformanceData;
+  stage3: PerformanceData;
+  [key: string]: string | PerformanceData;
+}
+
+interface VehicleBrand {
+  brand: string;
+  models: VehicleModel[];
+}
+
 // Dados mockados para demonstração
 const vehicleDataJson = {
   stages: [
@@ -36,7 +60,7 @@ const vehicleDataJson = {
 export default function ImprovedTuningStages() {
   const [selectedStage, setSelectedStage] = useState(1);
   const [selectedBrand, setSelectedBrand] = useState('');
-  const [selectedModel, setSelectedModel] = useState(null);
+  const [selectedModel, setSelectedModel] = useState<VehicleModel | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [filterDrivetrain, setFilterDrivetrain] = useState('all');
   const [compareMode, setCompareMode] = useState(false);
@@ -68,16 +92,16 @@ export default function ImprovedTuningStages() {
     })).filter(brand => brand.models.length > 0);
   }, [searchTerm, filterDrivetrain]);
 
-  const calculateGains = (original, tuned) => {
+  const calculateGains = (original: PerformanceData, tuned: PerformanceData) => {
     const powerGain = ((tuned.power_hp - original.power_hp) / original.power_hp * 100).toFixed(1);
     const torqueGain = ((tuned.torque_nm - original.torque_nm) / original.torque_nm * 100).toFixed(1);
     const timeImprovement = ((original.zero_to_100_s - tuned.zero_to_100_s) / original.zero_to_100_s * 100).toFixed(1);
     return { powerGain, torqueGain, timeImprovement };
   };
 
-  const getStageData = (model) => {
-    const stageKey = `stage${selectedStage}`;
-    return model[stageKey];
+  const getStageData = (model: VehicleModel): PerformanceData => {
+    const stageKey = `stage${selectedStage}` as 'stage1' | 'stage2' | 'stage3';
+    return model[stageKey] as PerformanceData;
   };
 
   return (
