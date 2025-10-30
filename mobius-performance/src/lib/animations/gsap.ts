@@ -36,8 +36,8 @@ export const slideInUp = {
 // Utility functions
 export const animateOnScroll = (
   selector: string,
-  animation: any,
-  options: any = {}
+  animation: { from: gsap.TweenVars; to: gsap.TweenVars },
+  options: gsap.TweenVars = {}
 ) => {
   if (typeof window === 'undefined') return;
 
@@ -52,14 +52,14 @@ export const animateOnScroll = (
         end: 'bottom 20%',
         toggleActions: 'play none none reverse',
         ...options
-      }
-    });
+      } as gsap.plugins.ScrollTriggerInstanceVars
+    } as gsap.TweenVars);
   });
 };
 
 export const staggerAnimation = (
   selector: string,
-  animation: any,
+  animation: { from: gsap.TweenVars; to: gsap.TweenVars },
   stagger: number = 0.1
 ) => {
   if (typeof window === 'undefined') return;
@@ -164,11 +164,11 @@ export const morphPath = (
 };
 
 // Timeline utilities
-export const createTimeline = (options: any = {}) => {
+export const createTimeline = (options: gsap.TimelineVars = {}) => {
   return gsap.timeline(options);
 };
 
-export const createScrollTimeline = (trigger: string, options: any = {}) => {
+export const createScrollTimeline = (trigger: string, options: gsap.TweenVars = {}) => {
   return gsap.timeline({
     scrollTrigger: {
       trigger: trigger,
@@ -176,14 +176,14 @@ export const createScrollTimeline = (trigger: string, options: any = {}) => {
       end: 'bottom 20%',
       scrub: 1,
       ...options
-    }
-  });
+    } as gsap.plugins.ScrollTriggerInstanceVars
+  } as gsap.TimelineVars);
 };
 
 // Performance optimizations
 export const batchAnimation = (
   selector: string,
-  animation: any,
+  animation: { from: gsap.TweenVars; to: gsap.TweenVars },
   batchSize: number = 10
 ) => {
   if (typeof window === 'undefined') return;

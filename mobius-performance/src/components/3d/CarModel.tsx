@@ -147,17 +147,18 @@ const NissanGTRUniversal = ({
     let meshCount = 0;
 
     // Percorrer todos os objetos na cena
-    clonedScene.traverse((child: any) => {
-      if (child.isMesh) {
+    clonedScene.traverse((child: THREE.Object3D) => {
+      if ((child as THREE.Mesh).isMesh) {
+        const mesh = child as THREE.Mesh;
         meshCount++;
         
         // Garantir que tem sombra
-        child.castShadow = true;
-        child.receiveShadow = true;
+        mesh.castShadow = true;
+        mesh.receiveShadow = true;
         
         // Se não tem material, aplicar um padrão
-        if (!child.material) {
-          child.material = new THREE.MeshStandardMaterial({
+        if (!mesh.material) {
+          mesh.material = new THREE.MeshStandardMaterial({
             color: '#ff0000',
             metalness: 0.7,
             roughness: 0.3
@@ -219,7 +220,7 @@ class ErrorBoundary extends React.Component<
     return { hasError: true };
   }
 
-  componentDidCatch(error: any, errorInfo: any) {
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     console.error('❌ GLTF Error capturado pelo ErrorBoundary:', error);
     console.error('📍 Error Info:', errorInfo);
     console.error('🔍 Stack:', error.stack);

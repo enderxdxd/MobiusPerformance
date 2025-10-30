@@ -142,7 +142,7 @@ export const useCarFilter = (initialCars: Car[] = cars) => {
     setFilteredCars(result);
   }, [filters, initialCars]);
 
-  const updateFilter = (key: keyof CarFilter, value: any) => {
+  const updateFilter = (key: keyof CarFilter, value: string | number) => {
     setFilters(prev => ({ ...prev, [key]: value }));
   };
 

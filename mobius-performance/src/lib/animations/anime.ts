@@ -104,8 +104,8 @@ export const countUp = (
     value: endValue,
     duration,
     easing: 'easeOutQuart',
-    update: function(anim: any) {
-      const currentValue = Math.round(anim.animatables[0].target.value);
+    update: function(anim: anime.AnimeInstance) {
+      const currentValue = Math.round((anim.animatables[0].target as unknown as { value: number }).value);
       (elements as NodeListOf<Element>).forEach(el => {
         el.textContent = currentValue.toString();
       });
@@ -232,8 +232,8 @@ export const typeWriter = (
     progress: text.length,
     duration: text.length * speed,
     easing: 'linear',
-    update: function(anim: any) {
-      const progress = Math.floor(anim.animatables[0].target.progress);
+    update: function(anim: anime.AnimeInstance) {
+      const progress = Math.floor((anim.animatables[0].target as unknown as { progress: number }).progress);
       if (progress > currentIndex) {
         currentIndex = progress;
         (elements as NodeListOf<Element>).forEach(el => {
@@ -245,14 +245,14 @@ export const typeWriter = (
 };
 
 // Timeline utilities
-export const createTimeline = (options: any = {}) => {
+export const createTimeline = (options: anime.AnimeParams = {}) => {
   return anime.timeline(options);
 };
 
 // Scroll-triggered animations
 export const onScrollAnimation = (
   targets: string | Element | NodeList,
-  animation: any,
+  animation: anime.AnimeParams,
   threshold: number = 0.1
 ) => {
   if (typeof window === 'undefined') return;
@@ -278,7 +278,7 @@ export const onScrollAnimation = (
 };
 
 // Utility functions
-export const setInitialState = (targets: string | Element | NodeList, properties: any) => {
+export const setInitialState = (targets: string | Element | NodeList, properties: anime.AnimeParams) => {
   return anime.set(targets, properties);
 };
 

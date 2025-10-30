@@ -52,9 +52,10 @@ module.exports = {
         }
       },
       fontFamily: {
-        sans: ['Poppins', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-        mono: ['JetBrains Mono', 'Fira Code', 'Consolas', 'monospace'],
-        display: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-inter)', 'Poppins', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        mono: ['var(--font-jetbrains-mono)', 'JetBrains Mono', 'Fira Code', 'Consolas', 'monospace'],
+        display: ['var(--font-space-grotesk)', 'Space Grotesk', 'Poppins', 'system-ui', 'sans-serif'],
+        grotesk: ['var(--font-space-grotesk)', 'Space Grotesk', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out',

@@ -7,7 +7,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 import { Logo } from '@/components/ui/Logo';
 
-const navigation = [
+interface NavigationItem {
+  name: string;
+  href: string;
+}
+
+const navigation: NavigationItem[] = [
   { name: 'Serviços', href: '/services' },
   { name: 'Tuning Stages', href: '/tuning-stages' },
   { name: 'Portfólio', href: '/portfolio' },
@@ -41,7 +46,7 @@ export const Navbar: React.FC = () => {
     setIsOpen(false);
   }, [pathname]);
 
-  const NavItem = ({ item }: { item: any }) => {
+  const NavItem = ({ item }: { item: NavigationItem }) => {
     const isActive = pathname === item.href || pathname.startsWith(item.href + '/');
 
     return (
