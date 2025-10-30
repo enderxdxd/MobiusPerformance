@@ -35,7 +35,7 @@ export const useCarData = () => {
       await new Promise(resolve => setTimeout(resolve, 100));
       const car = getCarById(id);
       return car || null;
-    } catch (err) {
+    } catch {
       setError('Erro ao buscar veículo');
       return null;
     } finally {
@@ -52,7 +52,7 @@ export const useCarData = () => {
       await new Promise(resolve => setTimeout(resolve, 200));
       const results = searchCars(query);
       return results;
-    } catch (err) {
+    } catch {
       setError('Erro ao pesquisar veículos');
       return [];
     } finally {
@@ -69,7 +69,7 @@ export const useCarData = () => {
       await new Promise(resolve => setTimeout(resolve, 150));
       const results = getCarsByBrand(brand);
       return results;
-    } catch (err) {
+    } catch {
       setError('Erro ao buscar veículos da marca');
       return [];
     } finally {

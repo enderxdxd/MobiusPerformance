@@ -1,4 +1,5 @@
-const anime = require('animejs');
+// eslint-disable-next-line @typescript-eslint/no-require-imports, @typescript-eslint/no-explicit-any
+const anime = require('animejs') as any;
 
 // Basic animation presets
 export const fadeInUp = (targets: string | Element | NodeList, delay: number = 0) => {

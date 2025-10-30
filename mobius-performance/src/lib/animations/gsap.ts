@@ -233,7 +233,7 @@ export const mobileOptimized = {
   transformOrigin: 'center center'
 };
 
-export default {
+const gsapAnimations = {
   fadeInUp,
   fadeInLeft,
   fadeInRight,
@@ -253,3 +253,5 @@ export default {
   customEases,
   mobileOptimized
 };
+
+export default gsapAnimations;

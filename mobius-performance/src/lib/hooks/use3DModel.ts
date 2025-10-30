@@ -2,13 +2,6 @@
 
 import { useState } from 'react';
 
-interface Use3DModelOptions {
-  autoRotate?: boolean;
-  rotationSpeed?: number;
-  scale?: number;
-  position?: [number, number, number];
-}
-
 // Simple state management for 3D models
 // Three.js hooks will be used directly in components inside Canvas
 export const useModelInteraction = () => {
