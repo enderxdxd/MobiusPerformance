@@ -1,11 +1,10 @@
 'use client';
 
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Phone, ChevronDown } from 'lucide-react';
-import { Logo } from '@/components/ui/Logo';
+import { Menu, X, Phone } from 'lucide-react';
 
 interface NavigationItem {
   name: string;

@@ -340,7 +340,7 @@ export const slideShow = (
   });
 };
 
-export default {
+const animeAnimations = {
   fadeInUp,
   fadeInLeft,
   fadeInRight,
@@ -366,3 +366,5 @@ export default {
   cardFlip,
   slideShow
 };
+
+export default animeAnimations;
