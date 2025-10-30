@@ -17,10 +17,9 @@ interface EngineViewerProps {
 const EngineScene: React.FC<{ 
   engineType: string; 
   onPartClick: (partName: string) => void;
-}> = ({ engineType, onPartClick }) => {
+}> = ({ onPartClick }) => {
   const { 
     hoveredObject, 
-    selectedObject, 
     handlePointerOver, 
     handlePointerOut, 
     handleClick 

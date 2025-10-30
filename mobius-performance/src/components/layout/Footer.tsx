@@ -2,19 +2,13 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { 
-  Car, 
-  Phone, 
   Mail, 
   MapPin, 
   Instagram, 
   Facebook, 
   Youtube,
   Clock,
-  Settings,
-  Zap,
-  Shield,
   MessageCircle
 } from 'lucide-react';
 import { siteConfig } from '../../../config/site.config';

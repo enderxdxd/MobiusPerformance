@@ -123,7 +123,7 @@ const NissanGTRUniversal = ({
   const groupRef = useRef<THREE.Group>(null);
   
   // Carregar o GLTF
-  const { scene } = useGLTF('/nissan_aimgain_gt_r35_type2/scene.gltf') as any;
+  const { scene } = useGLTF('/nissan_aimgain_gt_r35_type2/scene.gltf') as { scene: THREE.Group };
 
   // Auto-rotação
   useFrame((state, delta) => {
