@@ -40,14 +40,14 @@ export default function ContactPage() {
     message: ''
   });
 
-  const [isHovered, setIsHovered] = useState<number | null>(null);
+  const [isHovered, setIsHovered] = useState(null);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -167,7 +167,7 @@ export default function ContactPage() {
                 <div className="w-20 h-1 bg-red-600"></div>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="relative group">
                     <input
@@ -254,7 +254,7 @@ export default function ContactPage() {
                 </div>
 
                 <button
-                  type="submit"
+                  onClick={handleSubmit}
                   className="group relative w-full bg-red-600 hover:bg-red-700 text-white px-8 py-5 rounded-lg font-bold text-lg transition-all duration-300 overflow-hidden hover:shadow-[0_0_30px_rgba(220,38,38,0.5)] hover:scale-[1.02]"
                 >
                   <span className="relative z-10 flex items-center justify-center gap-3">
@@ -263,7 +263,7 @@ export default function ContactPage() {
                   </span>
                   <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
                 </button>
-              </form>
+              </div>
             </div>
 
             {/* WhatsApp & Map - 2 columns */}

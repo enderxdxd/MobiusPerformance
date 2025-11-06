@@ -20,7 +20,7 @@ export function calculatePercentageGain(before: number, after: number): number {
   return Math.round(((after - before) / before) * 100);
 }
 
-export function debounce<T extends (...args: never[]) => unknown>(
+export function debounce<T extends (...args: any[]) => any>(
   func: T,
   wait: number
 ): (...args: Parameters<T>) => void {
@@ -31,7 +31,7 @@ export function debounce<T extends (...args: never[]) => unknown>(
   };
 }
 
-export function throttle<T extends (...args: never[]) => unknown>(
+export function throttle<T extends (...args: any[]) => any>(
   func: T,
   limit: number
 ): (...args: Parameters<T>) => void {

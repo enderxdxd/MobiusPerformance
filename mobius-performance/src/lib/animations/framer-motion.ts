@@ -326,7 +326,7 @@ export const componentAnimations = {
   }
 };
 
-const framerMotionAnimations = {
+export default {
   fadeInUp,
   fadeInDown,
   fadeInLeft,
@@ -357,5 +357,3 @@ const framerMotionAnimations = {
   createScaleVariants,
   componentAnimations
 };
-
-export default framerMotionAnimations;

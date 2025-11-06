@@ -11,10 +11,7 @@ interface NissanGTRDirectProps {
 }
 
 export function NissanGTRDirect({ scale = 1, position = [0, 0, 0], rotation = [0, 0, 0] }: NissanGTRDirectProps) {
-  const { nodes, materials } = useGLTF('/nissan_aimgain_gt_r35_type2/scene.gltf') as unknown as { 
-    nodes: Record<string, THREE.Mesh>; 
-    materials: Record<string, THREE.Material> 
-  };
+  const { nodes, materials } = useGLTF('/nissan_aimgain_gt_r35_type2/scene.gltf') as any;
   
   // Helper para acessar geometrias
   const geo = (id: number) => nodes[`Object_${id}`]?.geometry as THREE.BufferGeometry | undefined;
@@ -149,7 +146,7 @@ export function NissanGTRDirect({ scale = 1, position = [0, 0, 0], rotation = [0
         {extraIds?.map((id) => {
           const g = geo(id); if (!g) return null;
           // tenta achar material original; se não, usa um dos nossos
-          const m = (nodes[`Object_${id}`] as THREE.Mesh & { material?: THREE.Material })?.material || materials.material || wheelMaterials.rimDark;
+          const m = (nodes[`Object_${id}`] as any)?.material || materials.material || wheelMaterials.rimDark;
           return <mesh key={`x-${id}`} geometry={g} material={m} castShadow receiveShadow />;
         })}
       </group>

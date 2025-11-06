@@ -26,6 +26,7 @@ export const useStaggeredAnimation = (
   delay: number = 0.1
 ) => {
   const refs = useRef<(HTMLElement | null)[]>([]);
+  const inViewStates = useRef<boolean[]>(new Array(itemCount).fill(false));
 
   useEffect(() => {
     refs.current = refs.current.slice(0, itemCount);
@@ -48,6 +49,7 @@ export const useParallax = (speed: number = 0.5) => {
     if (!element) return;
 
     const handleScroll = () => {
+      const rect = element.getBoundingClientRect();
       const scrolled = window.pageYOffset;
       const rate = scrolled * speed;
       

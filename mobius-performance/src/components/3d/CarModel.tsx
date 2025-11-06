@@ -123,7 +123,7 @@ const NissanGTRUniversal = ({
   const groupRef = useRef<THREE.Group>(null);
   
   // Carregar o GLTF
-  const { scene } = useGLTF('/nissan_aimgain_gt_r35_type2/scene.gltf') as { scene: THREE.Group };
+  const { scene } = useGLTF('/nissan_aimgain_gt_r35_type2/scene.gltf') as any;
 
   // Auto-rotação
   useFrame((state, delta) => {
@@ -147,18 +147,17 @@ const NissanGTRUniversal = ({
     let meshCount = 0;
 
     // Percorrer todos os objetos na cena
-    clonedScene.traverse((child: THREE.Object3D) => {
-      if ((child as THREE.Mesh).isMesh) {
-        const mesh = child as THREE.Mesh;
+    clonedScene.traverse((child: any) => {
+      if (child.isMesh) {
         meshCount++;
         
         // Garantir que tem sombra
-        mesh.castShadow = true;
-        mesh.receiveShadow = true;
+        child.castShadow = true;
+        child.receiveShadow = true;
         
         // Se não tem material, aplicar um padrão
-        if (!mesh.material) {
-          mesh.material = new THREE.MeshStandardMaterial({
+        if (!child.material) {
+          child.material = new THREE.MeshStandardMaterial({
             color: '#ff0000',
             metalness: 0.7,
             roughness: 0.3
@@ -220,7 +219,7 @@ class ErrorBoundary extends React.Component<
     return { hasError: true };
   }
 
-  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+  componentDidCatch(error: any, errorInfo: any) {
     console.error('❌ GLTF Error capturado pelo ErrorBoundary:', error);
     console.error('📍 Error Info:', errorInfo);
     console.error('🔍 Stack:', error.stack);

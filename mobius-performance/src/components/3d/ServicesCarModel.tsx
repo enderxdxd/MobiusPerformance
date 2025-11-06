@@ -13,10 +13,7 @@ interface ServicesNissanGTRProps {
 
 function ServicesNissanGTR({ scale = 1, position = [0, 0, 0], rotation = [0, 0, 0] }: ServicesNissanGTRProps) {
   const groupRef = useRef<THREE.Group>(null);
-  const { nodes, materials } = useGLTF('/nissan_aimgain_gt_r35_type2/scene.gltf') as unknown as { 
-    nodes: Record<string, THREE.Mesh>; 
-    materials: Record<string, THREE.Material> 
-  };
+  const { nodes, materials } = useGLTF('/nissan_aimgain_gt_r35_type2/scene.gltf') as any;
   
   // Auto-rotação suave
   useFrame((state, delta) => {

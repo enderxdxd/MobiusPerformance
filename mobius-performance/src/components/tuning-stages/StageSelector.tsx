@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Check, Zap, Settings, Wind, Flame } from 'lucide-react';
+import { Stage } from '@/types/stage';
 import { allStages } from '@/data/stages';
 import { formatPrice } from '@/lib/utils/formatters';
 

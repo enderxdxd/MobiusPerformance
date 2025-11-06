@@ -2,9 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getStageById } from '@/data/stages';
 
 interface RouteParams {
-  params: Promise<{
+  params: {
     id: string;
-  }>;
+  };
 }
 
 export async function GET(
@@ -12,7 +12,7 @@ export async function GET(
   { params }: RouteParams
 ) {
   try {
-    const { id } = await params;
+    const { id } = params;
 
     if (!id) {
       return NextResponse.json(

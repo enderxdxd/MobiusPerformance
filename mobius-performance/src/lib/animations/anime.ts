@@ -1,5 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-require-imports, @typescript-eslint/no-explicit-any
-const anime = require('animejs') as any;
+const anime = require('animejs');
 
 // Basic animation presets
 export const fadeInUp = (targets: string | Element | NodeList, delay: number = 0) => {
@@ -105,8 +104,8 @@ export const countUp = (
     value: endValue,
     duration,
     easing: 'easeOutQuart',
-    update: function(anim: anime.AnimeInstance) {
-      const currentValue = Math.round((anim.animatables[0].target as unknown as { value: number }).value);
+    update: function(anim: any) {
+      const currentValue = Math.round(anim.animatables[0].target.value);
       (elements as NodeListOf<Element>).forEach(el => {
         el.textContent = currentValue.toString();
       });
@@ -233,8 +232,8 @@ export const typeWriter = (
     progress: text.length,
     duration: text.length * speed,
     easing: 'linear',
-    update: function(anim: anime.AnimeInstance) {
-      const progress = Math.floor((anim.animatables[0].target as unknown as { progress: number }).progress);
+    update: function(anim: any) {
+      const progress = Math.floor(anim.animatables[0].target.progress);
       if (progress > currentIndex) {
         currentIndex = progress;
         (elements as NodeListOf<Element>).forEach(el => {
@@ -246,14 +245,14 @@ export const typeWriter = (
 };
 
 // Timeline utilities
-export const createTimeline = (options: anime.AnimeParams = {}) => {
+export const createTimeline = (options: any = {}) => {
   return anime.timeline(options);
 };
 
 // Scroll-triggered animations
 export const onScrollAnimation = (
   targets: string | Element | NodeList,
-  animation: anime.AnimeParams,
+  animation: any,
   threshold: number = 0.1
 ) => {
   if (typeof window === 'undefined') return;
@@ -279,7 +278,7 @@ export const onScrollAnimation = (
 };
 
 // Utility functions
-export const setInitialState = (targets: string | Element | NodeList, properties: anime.AnimeParams) => {
+export const setInitialState = (targets: string | Element | NodeList, properties: any) => {
   return anime.set(targets, properties);
 };
 
@@ -340,7 +339,7 @@ export const slideShow = (
   });
 };
 
-const animeAnimations = {
+export default {
   fadeInUp,
   fadeInLeft,
   fadeInRight,
@@ -366,5 +365,3 @@ const animeAnimations = {
   cardFlip,
   slideShow
 };
-
-export default animeAnimations;

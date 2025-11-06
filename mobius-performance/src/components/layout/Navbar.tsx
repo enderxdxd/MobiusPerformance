@@ -1,17 +1,13 @@
 'use client';
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, ChevronDown } from 'lucide-react';
+import { Logo } from '@/components/ui/Logo';
 
-interface NavigationItem {
-  name: string;
-  href: string;
-}
-
-const navigation: NavigationItem[] = [
+const navigation = [
   { name: 'Serviços', href: '/services' },
   { name: 'Tuning Stages', href: '/tuning-stages' },
   { name: 'Portfólio', href: '/portfolio' },
@@ -45,7 +41,7 @@ export const Navbar: React.FC = () => {
     setIsOpen(false);
   }, [pathname]);
 
-  const NavItem = ({ item }: { item: NavigationItem }) => {
+  const NavItem = ({ item }: { item: any }) => {
     const isActive = pathname === item.href || pathname.startsWith(item.href + '/');
 
     return (
