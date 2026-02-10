@@ -1,4 +1,4 @@
-export interface ApiResponse<T = any> {
+export interface ApiResponse<T = unknown> {
   success: boolean;
   data?: T;
   error?: string;
@@ -37,7 +37,7 @@ export interface AnalyticsEvent {
   action: string;
   label?: string;
   value?: number;
-  customParameters?: Record<string, any>;
+  customParameters?: Record<string, string | number | boolean>;
 }
 
 export interface NewsletterSubscription {
