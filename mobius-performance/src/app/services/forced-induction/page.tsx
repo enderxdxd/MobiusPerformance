@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Wind, Zap, Gauge, ArrowRight } from 'lucide-react';
+import { Wind, ArrowRight } from 'lucide-react';
 
 export default function ForcedInductionPage() {
   return (

@@ -1,7 +1,6 @@
 import React from 'react';
 import { HeroSection } from '@/components/home/HeroSection';
 import { ServicesSection } from '@/components/home/ServicesSection';
-import { StatsCounter } from '@/components/home/StatsCounter';
 import { BrandGrid } from '@/components/home/BrandGrid';
 
 export default function Home() {

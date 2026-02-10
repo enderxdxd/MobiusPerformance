@@ -40,14 +40,14 @@ export default function ContactPage() {
     message: ''
   });
 
-  const [isHovered, setIsHovered] = useState(null);
+  const [isHovered, setIsHovered] = useState<number | null>(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value

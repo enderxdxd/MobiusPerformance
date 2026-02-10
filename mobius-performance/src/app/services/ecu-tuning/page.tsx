@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Zap, TrendingUp, Gauge, Fuel, Shield, ArrowRight, CheckCircle } from 'lucide-react';
+import { Zap, TrendingUp, Gauge, Fuel, Shield, ArrowRight } from 'lucide-react';
 
 const benefits = [
   {

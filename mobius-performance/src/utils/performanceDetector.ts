@@ -6,20 +6,20 @@ export const detectPerformanceLevel = (): 'low' | 'medium' | 'high' => {
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   
   // Verifica memória disponível (se suportado)
-  const memory = (navigator as any).deviceMemory;
+  const memory = (navigator as Navigator & { deviceMemory?: number }).deviceMemory;
   
   // Verifica número de cores do processador
   const cores = navigator.hardwareConcurrency || 1;
   
   // Detecção básica de GPU
   const canvas = document.createElement('canvas');
-  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  const gl = canvas.getContext('webgl') as WebGLRenderingContext | null;
   let gpuInfo = '';
   
   if (gl) {
     const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
     if (debugInfo) {
-      gpuInfo = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL).toLowerCase();
+      gpuInfo = (gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) as string).toLowerCase();
     }
   }
   

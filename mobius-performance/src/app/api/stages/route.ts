@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { stages } from '@/data/stages';
 import { Stage } from '@/types/stage';
-import { getStageById, getStagesByDifficulty, getPopularStages } from '@/data/stages';
+import { getStagesByDifficulty, getPopularStages } from '@/data/stages';
 
 export async function GET(request: NextRequest) {
   try {

@@ -3,8 +3,7 @@
 import React, { Suspense, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Environment, ContactShadows, Html, Text } from '@react-three/drei';
-import { useModelInteraction } from '@/lib/hooks/use3DModel';
-import { Group, Mesh } from 'three';
+import { Group } from 'three';
 import { motion } from 'framer-motion';
 
 interface TurboAnimationProps {

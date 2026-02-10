@@ -14,8 +14,8 @@ const brands = [
 ];
 
 function BrandGrid() {
-  const [selectedBrand, setSelectedBrand] = useState(null);
-  const [hoveredBrand, setHoveredBrand] = useState(null);
+  const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
+  const [hoveredBrand, setHoveredBrand] = useState<string | null>(null);
 
   return (
     <div className="min-h-screen relative overflow-hidden" style={{ backgroundColor: '#0a0a0a' }}>
